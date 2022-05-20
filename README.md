@@ -1,10 +1,11 @@
-# VTEX Product Specification Video
+# VTEX Product Specification Text
+
+## Disclaimer: this is not an official VTEX app
+:loudspeaker:  This app is not supported by the product team. Use it on your own risk!
 
 ## Description
 
-VTEX Store Components is a collection of components that can be used to create/extend others VTEX apps.
-
-:loudspeaker: **Disclaimer:** Don't fork this project; use, contribute, or open issue with your feature request.
+This app allows the rendering of simple specification text values outside of the specification table, free from any predefined styling. It is capable of rendering either single fields or whole groups, depending on the mode you set.
 
 ## Table of Contents
 
@@ -14,31 +15,44 @@ VTEX Store Components is a collection of components that can be used to create/e
 
 ## Usage
 
-To use this app, you need to import in your dependencies on `manifest.json`.
+Clone the app and make it yours. Replace the vendor name with the name of your account. To use this app, you need to import in your dependencies on manifest.json.
 
 ```json
   "dependencies": {
-    "vtex.product-specification-image": "0.x"
+    "vendor.product-specification-text": "0.x"
   }
 ```
 
-Then, you can add a component block into your app theme on your product detail page. You can use props to define both the fallback video as well as the specification name to look into for videos.
+Then, you can add a component block into your app theme on your product detail page. Via the "mode" prop you can choose to render a single field or a whole group of fields. By default, it renders a single field. 
 
 ```json
-"productvideo":{
+"productspecificationtext":{
     "props":{
-      "specification": "trailervideo",
-      "fallbackvideo": "https://www.youtube.com/watch?v=NQ0HkV4Zp_o"
+      "specification": "headline_1",
+      "group": "marketing_texts"
+      "mode": "field"
       
     }
   }
 ```
+
+
+## Props:
+| Prop | Purpose | expected values| Default |
+| ---- | ---- | ---- |---- |
+| specification | the specification field name to load the value from. **Mandatory, even in group mode** - just add a string. | string | undefined |
+| group | The specification group name to look for the specification in **Mandatory** | string | undefined |
+| mode | Decides, whether to run | "field", "group" | "field" |
+
+
 ## CSS handles
 The following CSS handles can be used for styling:
 
 ```js
-'containerEmpty'
-'videoContainer'
+'containerEmpty',
+'specificationTextContainer',
+'specificationTextValue',
+'specificationTextField'
 ```
 
 
