@@ -6,9 +6,6 @@
 &nbsp;
 # VTEX Product Specification Text
 
-## Disclaimer: this is not an official VTEX app
-:loudspeaker:  This app is not supported by the product team. Use it on your own risk!
-
 ## Description
 
 This app allows the rendering of simple specification text values outside of the specification table, free from any predefined styling. It is capable of rendering either single fields or whole groups, depending on the mode you set.
